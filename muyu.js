@@ -1,27 +1,33 @@
-var counter = 0;
-var counterElement = document.getElementById('counter');
-var quoteElement = document.getElementById('quote');
-
-function beat() {
-    counter++;
-    counterElement.innerText = '累计积累功德' + counter + '次';
-    fetchQuote();
-}
-
-function reset() {
-    counter = 0;
-    counterElement.innerText = '累计积累功德' + counter + '次';
-    fetchQuote();
-}
+let counter = 0;
 
 function fetchQuote() {
     fetch('https://quotes.rest/qod?language=en')
         .then(response => response.json())
         .then(data => {
-            var quote = data.contents.quotes[0].quote;
-            quoteElement.innerText = quote;
+            const quoteText = data.contents.quotes[0].quote;
+            const quoteElement = document.createElement('p');
+            quoteElement.textContent = quoteText;
+
+            document.getElementById('quoteArea').appendChild(quoteElement);
         })
         .catch(error => console.error('Error:', error));
 }
 
-window.onload = fetchQuote;
+function beat() {
+    counter += 1;
+    document.getElementById('counter').textContent = `累计积累功德${counter}次`;
+
+    fetchQuote();
+}
+
+function resetCounter() {
+    counter = 0;
+    document.getElementById('counter').textContent = `累计积累功德${counter}次`;
+
+    const quoteArea = document.getElementById('quoteArea');
+    while (quoteArea.firstChild) {
+        quoteArea.removeChild(quoteArea.firstChild);
+    }
+}
+
+beat();
