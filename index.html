@@ -2,32 +2,15 @@
 <html>
   <head>
     <title>电子木鱼</title>
-    <style>
-      body{
-        text-align: center;
-        padding-top: 50px;
-        background-color: #9ad3bc;
-        color: #ffffff;
-        font-family: Arial, sans-serif;
-      }
-      #muyu{
-        cursor: pointer;
-        transition: .2s;
-      }
-      p{
-        font-size: 24px;
-        margin-top: 50px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div>
       <img id="muyu" src="muyu.jpg" onclick="beat()" width="200" height="200">
       <p id="counter">累计积累功德0次</p>
       <button onclick="reset()">清零</button>
-      <p>让人能心平气和的文案</p>
+      <p id="text">让人能心平气和的文案</p>
     </div>
     <script src="muyu.js"></script>
-    <script src="muyu.css"></script>
   </body>
 </html>
