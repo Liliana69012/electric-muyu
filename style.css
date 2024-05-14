@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+    padding-top: 50px;
+    background: linear-gradient(to right, #9ad3bc, #90dade);
+    color: #F5F5F5;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+}
+
+#muyu{
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+#muyu:hover {
+    transform: scale(1.1);
+}
+
+p{
+    font-size: 24px;
+    margin-top: 50px;
+    transition: opacity 0.5s ease-in-out;  /* 实现渐变效果 */
+}
