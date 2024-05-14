@@ -4,13 +4,14 @@
     <title>电子木鱼</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  <body>
-    <div>
-      <img id="muyu" src="muyu.jpg" onclick="beat()" width="200" height="200">
-      <p id="counter">累计积累功德0次</p>
-      <button onclick="reset()">清零</button>
-      <p id="quote">正在获取名言...</p>
+<body>
+    <img src="muyu.jpg" onclick="beat()" alt="木鱼" width="200" height="200">
+    <p id="counter">累计积累功德0次</p>
+    <button onclick="resetCounter()">清零</button>
+    <div id="quoteArea">
+        <!-- 这里将显示获取到的名言 -->
     </div>
-    <script src="muyu.js"></script>
-  </body>
+
+    <script src="script.js"></script>
+</body>
 </html>
